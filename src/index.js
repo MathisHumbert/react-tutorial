@@ -1,17 +1,31 @@
+// index.js is an entry point so we need to render our components with react dom
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// stateless functional component
+function Greeting() {
+  return (
+    <React.Fragment>
+      <div className="test">
+        <h1>hello people</h1>
+        <ul>
+          <li>
+            <a href="#">hello world</a>
+          </li>
+          <img src="" alt="" />
+        </ul>
+      </div>
+      <div></div>
+    </React.Fragment>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const Greeting = () => {
+//   return React.createElement(
+//     'div',
+//     {},
+//     React.createElement('h1', {}, 'hello world')
+//   );
+// };
+
+ReactDom.render(<Greeting />, document.getElementById('root'));
