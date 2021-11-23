@@ -2,30 +2,42 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+// CSS
+import './index.css';
+
 // stateless functional component
-function Greeting() {
+function BookList() {
   return (
-    <React.Fragment>
-      <div className="test">
-        <h1>hello people</h1>
-        <ul>
-          <li>
-            <a href="#">hello world</a>
-          </li>
-          <img src="" alt="" />
-        </ul>
-      </div>
-      <div></div>
-    </React.Fragment>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-// const Greeting = () => {
-//   return React.createElement(
-//     'div',
-//     {},
-//     React.createElement('h1', {}, 'hello world')
-//   );
-// };
+const Book = () => {
+  return (
+    <article className="book">
+      <Image></Image>
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const Image = () => (
+  <img
+    src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX218_BO1,204,203,200_QL40_ML2_.jpg"
+    alt=""
+  />
+);
+const Title = () => <h1>I Love You to the Moon and Back</h1>;
+const Author = () => <h4>Amelia Hepworth</h4>;
+
+ReactDom.render(<BookList />, document.getElementById('root'));
